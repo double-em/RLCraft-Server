@@ -21,3 +21,7 @@ docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:2556
   - Default: none
 - RAM - Sets the dedicated RAM (java -Xms, -Xmx)
   - Default: 4G
+
+## References
+- JVM Parameters<br>
+  https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
