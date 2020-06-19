@@ -1,4 +1,4 @@
-# RLCraft-Server
+# RLCraft-Server ![RLCraft Server Publish](https://github.com/double-em/RLCraft-Server/workflows/RLCraft%20Server%20Publish/badge.svg)
 Docker image for the Forge modded server with RLCraft installed.
 
 Minimum starting command for online use:
