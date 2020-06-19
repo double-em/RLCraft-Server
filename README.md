@@ -5,10 +5,10 @@ Docker image for the Forge modded server with RLCraft installed.
 
 Minimum starting command for online use:
 ```
-docker run -dit -p 25565:25565 rlcraft-server
+docker run -dit -p 25565:25565 doubleem/rlcraft-server
 ```
 
 For saving and loading worlds and configurations attach a valume to the /server/server-data path, like so:
 ```
-docker run -dit -v rlcraft-server:/server/server-data -p 25565:25565 rlcraft-server
+docker run -dit -v rlcraft-server:/server/server-data -p 25565:25565 doubleem/rlcraft-server
 ```
