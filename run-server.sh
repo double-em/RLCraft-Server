@@ -1,6 +1,14 @@
 #!/bin/sh
 
-AVAIL_RAM=4G
+DEFAULT_RAM=4G
+
+if [ "$EULA" != "" ]; then
+     echo "eula=$EULA" > eula.txt
+else
+     echo "Please provide the EULA environment variable."
+     echo "Note: By providing EULA=TRUE you agree to the EULA at https://account.mojang.com/documents/minecraft_eula."
+     exit 1
+fi
 
 if [ ! -d "world" ] && [ -d "server-data" ]; then
      echo "Copying previous data..."
@@ -9,7 +17,7 @@ fi
 
 # Parameters from aikar's post:
 # https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
-java -Xms${AVAIL_RAM} -Xmx${AVAIL_RAM} \
+java -Xms${RAM:-$DEFAULT_RAM} -Xmx${RAM:-$DEFAULT_RAM} \
      -XX:+UseG1GC -XX:+ParallelRefProcEnabled \
      -XX:MaxGCPauseMillis=200 \
      -XX:+UnlockExperimentalVMOptions \

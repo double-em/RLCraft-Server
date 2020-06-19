@@ -3,8 +3,6 @@
 MINECRAFT_VER=1.12.2
 FORGE_VER=14.23.5.2854
 
-echo "eula=true" >> eula.txt
-
 echo "Downloading Forge..."
 FORGE_URL=https://files.minecraftforge.net/maven/net/minecraftforge/forge/${MINECRAFT_VER}-${FORGE_VER}/forge-${MINECRAFT_VER}-${FORGE_VER}-installer.jar
 wget "$FORGE_URL" -O installer.jar
