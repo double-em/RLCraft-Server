@@ -2,12 +2,14 @@
 
 DEFAULT_RAM=4G
 
-if [ "$EULA" != "" ]; then
-     echo "eula=$EULA" > eula.txt
-else
-     echo "Please provide the EULA environment variable."
-     echo "Note: By providing EULA=TRUE you agree to the EULA at https://account.mojang.com/documents/minecraft_eula."
-     exit 1
+if [ ! -f eula.txt ]
+     if [ "$EULA" != "" ]; then
+          echo "eula=$EULA" > eula.txt
+     else
+          echo "Please provide the EULA environment variable."
+          echo "Note: By providing EULA=TRUE you agree to the EULA at https://account.mojang.com/documents/minecraft_eula."
+          exit 1
+     fi
 fi
 
 if [ ! -d "world" ] && [ -d "server-data" ]; then
