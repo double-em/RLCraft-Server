@@ -25,3 +25,5 @@ docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:2556
 ## References
 - JVM Parameters<br>
   https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
+- Crontab<br>
+  https://www.adminschoice.com/crontab-quick-reference
