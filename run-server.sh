@@ -2,7 +2,7 @@
 
 DEFAULT_RAM=4G
 
-if [ ! -f eula.txt ]
+if [ ! -f eula.txt ]; then
      if [ "$EULA" != "" ]; then
           echo "eula=$EULA" > eula.txt
      else
