@@ -16,7 +16,7 @@ jobs:
         uses: dawidd6/action-get-tag@v1
 
       - name: Build Image
-        run: docker build --tag eu.gcr.io/rlcraft:${{steps.tag.outputs.tag}} --file Dockerfile
+        run: docker build --tag eu.gcr.io/rlcraft:${{steps.tag.outputs.tag}} .
 
       - name: Tag Latest
         run: docker tag eu.gcr.io/rlcraft:${{steps.tag.outputs.tag}} eu.gcr.io/rlcraft:latest
