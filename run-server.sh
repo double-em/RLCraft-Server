@@ -33,8 +33,3 @@ java -Xms${RAM:-$DEFAULT_RAM} -Xmx${RAM:-$DEFAULT_RAM} \
      -XX:+PerfDisableSharedMem \
      -XX:MaxTenuringThreshold=1 \
      -jar server.jar nogui
-
-if [ -d "world" ] && [ -d "server-data" ]; then
-     echo "Copying to volume..."
-     cp -Rfv world server.properties ops.json whitelist.json banned-ips.json banned-players.json server-data/
-fi
