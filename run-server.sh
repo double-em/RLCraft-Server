@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEFAULT_RAM=4G
+DEFAULT_RAM=6G
 
 if [ ! -f eula.txt ]; then
      if [ "$EULA" != "" ]; then
@@ -10,11 +10,6 @@ if [ ! -f eula.txt ]; then
           echo "Note: By providing EULA=TRUE you agree to the EULA at https://account.mojang.com/documents/minecraft_eula."
           exit 1
      fi
-fi
-
-if [ ! -d "world" ] && [ -d "server-data" ]; then
-     echo "Copying previous data..."
-     cp -Rfv server-data/* .
 fi
 
 # Parameters from aikar's post:
