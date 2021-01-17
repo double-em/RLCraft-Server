@@ -1,19 +1,21 @@
 # RLCraft Server
-![RLCraft Server Publish](https://github.com/double-em/RLCraft-Server/workflows/RLCraft%20Server%20Publish/badge.svg)
 
 Docker image for the Forge modded server with RLCraft installed.
 
 ## Quickstart
-Minimum starting command for online use:
-```
-docker run -dit -e EULA=true -p 25565:25565 doubleem/rlcraft-server
-```
 
-For saving and loading worlds and configurations attach a volume to the /server/server-data path, like so:
-```
-docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:25565 doubleem/rlcraft-server
-```
+### Example For GCP VM
 
+1. Create a e2-standard-2 vm with network tag `mc` using COS image
+1. Add a firewall rule for port 25565 0.0.0.0/0 to target tag `mc`
+1. SSH into server
+```bash
+cd &&
+git clone https://github.com/erzz/RLCraft-Server.git
+docker build -t rl:latest .
+mkdir ~/data
+docker run -dit -e EULA=true -v ~/data:/server/server-data -p 25565:25565 rl:latest
+```
 **NOTE**: By providing EULA=TRUE you agree to the EULA at https://account.mojang.com/documents/minecraft_eula.
 
 ## Environment Variables
