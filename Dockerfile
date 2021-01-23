@@ -15,6 +15,7 @@ RUN java -jar installer.jar --installServer \
     && ln -s forge-*.jar server.jar
 
 FROM openjdk:8-jre-slim
+RUN apt update && apt install -y screen
 COPY run-server.sh /
 COPY --from=server-install /server /server/
 RUN adduser --system --group forge && \
