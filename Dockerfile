@@ -9,7 +9,7 @@ RUN /start.sh
 FROM openjdk:8-jre-slim AS server-install
 COPY --from=base /server /server/
 WORKDIR /server
-COPY /server.properties .
+COPY server.properties ops.json /server/
 RUN java -jar installer.jar --installServer \
     && rm -rf installer* \
     && ln -s forge-*.jar server.jar
