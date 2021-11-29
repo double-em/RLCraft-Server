@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEFAULT_RAM=4G
+DEFAULT_RAM=6G
 
 if [ ! -f eula.txt ]; then
      if [ "$EULA" != "" ]; then

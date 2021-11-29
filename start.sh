@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MINECRAFT_VER=1.12.2
-FORGE_VER=14.23.5.2854
+FORGE_VER=14.23.5.2855
 
 echo "Downloading Forge..."
 FORGE_URL=https://files.minecraftforge.net/maven/net/minecraftforge/forge/${MINECRAFT_VER}-${FORGE_VER}/forge-${MINECRAFT_VER}-${FORGE_VER}-installer.jar
