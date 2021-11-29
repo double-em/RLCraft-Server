@@ -20,7 +20,7 @@ docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:2556
 - EULA (Required)
   - Default: none
 - RAM - Sets the dedicated RAM (java -Xms, -Xmx)
-  - Default: 4G
+  - Default: 4G 
 
 ## References
 - JVM Parameters<br>
